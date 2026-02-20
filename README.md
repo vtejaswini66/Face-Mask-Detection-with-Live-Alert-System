@@ -1,13 +1,10 @@
-# 😷 Face Mask Detection with Live Alert System
+#  Face Mask Detection with Live Alert System
 
 A real-time face mask detection system using **OpenCV**, **TensorFlow/Keras**, and **Flask**.  
 Detects whether people are wearing face masks via webcam and fires live alerts when no mask is found.
 
----
+##  Project Structure
 
-## 📁 Project Structure
-
-```
 face_mask_detection/
 ├── app.py                  # Flask web application (live stream + upload)
 ├── train_model.py          # CNN training script
@@ -27,9 +24,6 @@ face_mask_detection/
 ├── utils/
 │   └── evaluate_model.py   # Confusion matrix + ROC curve
 └── screenshots/            # Auto-saved screenshots (created at runtime)
-```
-
----
 
 ## ⚙️ Setup
 
@@ -52,9 +46,7 @@ source venv/bin/activate      # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
----
-
-## 🗂️ Dataset
+##  Dataset
 
 ### Option A – Kaggle Dataset (recommended for production)
 
@@ -72,7 +64,7 @@ Generates **500 synthetic images per class** (1,000 total) — no internet requi
 
 ---
 
-## 🧠 Train the Model
+##  Train the Model
 
 ```bash
 python train_model.py
@@ -87,9 +79,7 @@ What it does:
 
 **Expected results on Kaggle dataset:** ~98–99% validation accuracy.
 
----
-
-## 🎥 Real-Time Detection (standalone)
+## Real-Time Detection (standalone)
 
 ```bash
 python detect_realtime.py                        # default webcam
@@ -104,9 +94,8 @@ python detect_realtime.py --threshold 0.6        # stricter threshold
 | `q` | Quit |
 | `s` | Save screenshot |
 
----
 
-## 🌐 Flask Web App
+##  Flask Web App
 
 ```bash
 python app.py
@@ -123,9 +112,7 @@ Open **http://localhost:5000** in your browser.
 | `/stats` | JSON stats (faces, alerts, FPS, uptime) |
 | `/health` | Health check / model status |
 
----
-
-## 📊 Evaluate the Model
+##  Evaluate the Model
 
 ```bash
 python utils/evaluate_model.py
@@ -137,9 +124,9 @@ Outputs:
 
 Saved to `model/evaluation.png`.
 
----
 
-## 🎬 Offline Demo (no webcam / model required)
+
+##  Offline Demo (no webcam / model required)
 
 ```bash
 python demo_offline.py --frames 60 --output demo_output.mp4
@@ -148,7 +135,7 @@ Generates a synthetic video demonstrating the detection overlay and alert system
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ### CNN Model
 
@@ -176,18 +163,14 @@ Webcam Frame
     └─ Alert if no-mask detected
 ```
 
----
-
-## 🚨 Alert System
+##  Alert System
 
 - **Visual**: Red banner overlaid on the video frame for 2 seconds
 - **Console**: Timestamped log entry per alert
 - **Flask dashboard**: Live JS-polled counter + banner animation
 - **Screenshot**: Press `s` in standalone mode to capture frame
 
----
-
-## 📦 Dependencies
+##  Dependencies
 
 | Package | Purpose |
 |---------|---------|
@@ -199,17 +182,14 @@ Webcam Frame
 | `scikit-learn` | Metrics, confusion matrix |
 | `matplotlib` | Training plots |
 
----
-
-## 📌 Notes
+##  Notes
 
 - The Haar Cascade (`haarcascade_frontalface_default.xml`) ships with OpenCV — no download needed.
 - For GPU acceleration install `tensorflow-gpu` instead of `tensorflow`.
 - In **demo mode** (no model loaded) predictions are random — train the model for real results.
 - The Flask MJPEG stream uses one webcam process per server restart; for multi-user production use a proper WSGI server + shared frame buffer.
 
----
 
-## 📄 License
+##  License
 
 MIT — free to use, modify, and distribute.
