@@ -4,7 +4,7 @@ A real-time face mask detection system using **OpenCV**, **TensorFlow/Keras**, a
 Detects whether people are wearing face masks via webcam and fires live alerts when no mask is found.
 
 ##  Project Structure
-
+```
 face_mask_detection/
 ├── app.py                  # Flask web application (live stream + upload)
 ├── train_model.py          # CNN training script
@@ -24,7 +24,7 @@ face_mask_detection/
 ├── utils/
 │   └── evaluate_model.py   # Confusion matrix + ROC curve
 └── screenshots/            # Auto-saved screenshots (created at runtime)
-
+```
 ## ⚙️ Setup
 
 ### 1. Clone / download the project
