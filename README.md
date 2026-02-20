@@ -6,24 +6,24 @@ Detects whether people are wearing face masks via webcam and fires live alerts w
 ##  Project Structure
 ```
 face_mask_detection/
-├── app.py                  # Flask web application (live stream + upload)
-├── train_model.py          # CNN training script
-├── detect_realtime.py      # Standalone OpenCV detection script
-├── generate_dataset.py     # Synthetic dataset generator (demo / offline)
-├── demo_offline.py         # Offline demo video generator (no webcam needed)
-├── requirements.txt        # Python dependencies
+├── app.py                  
+├── train_model.py          
+├── detect_realtime.py      
+├── generate_dataset.py     
+├── demo_offline.py         
+├── requirements.txt        
 ├── dataset/
-│   ├── with_mask/          # Training images – masked faces
-│   └── without_mask/       # Training images – unmasked faces
+│   ├── with_mask/         
+│   └── without_mask/       
 ├── model/
-│   ├── mask_detector.h5    # Trained Keras model (generated after training)
+│   ├── mask_detector.h5    
 │   └── training_history.png
 ├── templates/
-│   ├── index.html          # Live dashboard UI
-│   └── upload.html         # Static-image test page
+│   ├── index.html          
+│   └── upload.html         
 ├── utils/
-│   └── evaluate_model.py   # Confusion matrix + ROC curve
-└── screenshots/            # Auto-saved screenshots (created at runtime)
+│   └── evaluate_model.py   
+└── screenshots/            
 ```
 ## ⚙️ Setup
 
@@ -82,10 +82,10 @@ What it does:
 ## Real-Time Detection (standalone)
 
 ```bash
-python detect_realtime.py                        # default webcam
-python detect_realtime.py --source 1             # second webcam
-python detect_realtime.py --source video.mp4     # video file
-python detect_realtime.py --threshold 0.6        # stricter threshold
+python detect_realtime.py                       
+python detect_realtime.py --source 1             
+python detect_realtime.py --source video.mp4     
+python detect_realtime.py --threshold 0.6       
 ```
 
 **Controls:**
