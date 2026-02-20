@@ -189,7 +189,5 @@ Webcam Frame
 - In **demo mode** (no model loaded) predictions are random — train the model for real results.
 - The Flask MJPEG stream uses one webcam process per server restart; for multi-user production use a proper WSGI server + shared frame buffer.
 
-##  License
 
-MIT — free to use, modify, and distribute.
 
